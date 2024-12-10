@@ -2,15 +2,4 @@
 **Information**
 * Package manager: Lazy.nvim
 * Theme: Zenbone
-* Amount of plugins: 32
-
-**Needs to be installed:**
-* Curl
-* Wget
-* Clang
-* Clangd
-* Clang-format
-* Clang-tidy
-* Lazygit
-* Rust-analyzer
-* Rustfmt
+* Lsp: Clang-tidy/Clangd, Rustc and LuaLs
