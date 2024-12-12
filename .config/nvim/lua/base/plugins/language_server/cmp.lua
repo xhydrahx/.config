@@ -1,3 +1,4 @@
+---@diagnostic disable: redundant-parameter
 local cmp = require('cmp')
 local lspkind = require('lspkind')
 local cmp_autopairs = require('nvim-autopairs.completion.cmp')
@@ -54,27 +55,28 @@ cmp.setup({
     { name = 'spell',    priority = 600 },
   },
   formatting = {
-    format = lspkind.cmp_format({
-      mode = 'symbol_text',
-      maxwidth = 50,
-      ellipsis_char = '...',
-      before = function(entry, vim_item)
-        vim_item.menu = ({
-          nvim_lsp = "",
-          luasnip  = "",
-          buffer   = "",
-          path     = "",
-          spell    = "",
-        })[entry.source.name]
-        return vim_item
-      end,
-    }),
+    format = function(entry, vim_item)
+      local icon = require('lspkind').symbolic(vim_item.kind, { mode = "symbol" })
+      vim_item.abbr = icon .. " " .. vim_item.abbr
+      vim_item.kind = ""
+
+      vim_item.menu = ({
+        nvim_lsp = "",
+        luasnip  = "",
+        buffer   = "",
+        path     = "",
+        spell    = "",
+      })[entry.source.name]
+
+      return vim_item
+    end,
   },
   experimental = {
     ghost_text = true,
   },
 })
 
+---@diagnostic disable-next-line: undefined-field
 cmp.setup.cmdline(':', {
   mapping = cmp.mapping.preset.cmdline(),
   sources = {
@@ -82,6 +84,7 @@ cmp.setup.cmdline(':', {
   },
 })
 
+---@diagnostic disable-next-line: undefined-field
 cmp.setup.cmdline('/', {
   mapping = cmp.mapping.preset.cmdline(),
   sources = {

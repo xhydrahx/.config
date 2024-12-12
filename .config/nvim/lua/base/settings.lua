@@ -3,31 +3,30 @@ vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
 vim.opt.autoindent = true
 vim.opt.smartindent = true
+
 vim.opt.number = true
 vim.opt.relativenumber = true
 vim.opt.statuscolumn = "%=%{v:relnum > 0 ? v:relnum : v:lnum} "
 
-local special_buffers = vim.api.nvim_create_augroup("SpecialBufferSettings", { clear = true })
+vim.api.nvim_create_augroup("SpecialBufferSettings", { clear = true })
 
-vim.api.nvim_create_autocmd({ "BufEnter", "TermOpen" }, {
-  group = special_buffers,
-  pattern = { "*" },
-  callback = function(opts)
-    if vim.bo[opts.buf].buftype == "terminal" then
-      vim.wo.number = false
-      vim.wo.relativenumber = false
-      vim.wo.statuscolumn = ""
-    end
-  end
+vim.api.nvim_create_autocmd("TermOpen", {
+  group = "SpecialBufferSettings",
+  pattern = "*",
+  callback = function()
+    vim.opt_local.number = false
+    vim.opt_local.relativenumber = false
+    vim.opt_local.statuscolumn = ""
+  end,
 })
 
 vim.api.nvim_create_autocmd("FileType", {
-  group = special_buffers,
-  pattern = { "alpha", "dashboard", "lazy" },
+  group = "SpecialBufferSettings",
+  pattern = { "alpha", "dashboard", "lazy", "terminal" },
   callback = function()
-    vim.wo.number = false
-    vim.wo.relativenumber = false
-    vim.wo.statuscolumn = ""
+    vim.opt_local.number = false
+    vim.opt_local.relativenumber = false
+    vim.opt_local.statuscolumn = ""
   end,
 })
 
