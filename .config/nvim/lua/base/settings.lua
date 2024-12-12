@@ -12,7 +12,7 @@ vim.api.nvim_create_augroup("SpecialBufferSettings", { clear = true })
 
 vim.api.nvim_create_autocmd("FileType", {
   group = "SpecialBufferSettings",
-  pattern = { "alpha", "dashboard", "NvimTree", "TelescopePrompt", "lazy", "terminal" },
+  pattern = { "alpha", "dashboard", "lazy", "terminal" },
   callback = function()
     vim.opt_local.number = false
     vim.opt_local.relativenumber = false

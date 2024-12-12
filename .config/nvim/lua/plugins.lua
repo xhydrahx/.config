@@ -11,6 +11,17 @@ vim.opt.termguicolors = true
 
 require("lazy").setup({
   {
+    "uga-rosa/ccc.nvim",
+    config = function()
+      require("ccc").setup({
+        highlighter = {
+          auto_enable = true,
+          lsp = true,
+        },
+      })
+    end,
+  },
+  {
     "rachartier/tiny-inline-diagnostic.nvim",
     event = "VeryLazy",
     priority = 1000,
