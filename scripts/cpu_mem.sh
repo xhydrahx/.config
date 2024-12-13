@@ -43,5 +43,4 @@ get_memory_usage() {
     fi
 }
 
-# Output format for tmux status bar
-echo "CPU: $(get_cpu_usage) | MEM: $(get_memory_usage)"
+echo "CPU: $(get_cpu_usage)  RAM: $(get_memory_usage)"
