@@ -5,7 +5,11 @@ hour=$(date +%H)
 
 case "$weather" in
   "Clear")
-    echo ""
+    if [ "$hour" -ge 6 ] && [ "$hour" -lt 18 ]; then
+      printf "\uf522"
+    else
+      printf "\uf186"
+    fi
     ;;
   "Partly cloudy")
     if [ "$hour" -ge 6 ] && [ "$hour" -lt 18 ]; then

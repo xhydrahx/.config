@@ -57,3 +57,7 @@ vim.keymap.set('n', '<leader>ws', "<cmd>FzfLua lsp_workspace_symbols<CR>", { des
 vim.keymap.set('n', '<leader>wd', "<cmd>FzfLua lsp_workspace_diagnostics<CR>", { desc = "LSP Workspace Diagnostics" })
 
 vim.keymap.set('n', '<leader>cp', '<cmd>CccPick<CR>', { desc = "Color picker" })
+
+vim.cmd([[
+  au VimLeave * set guicursor=a:ver10-blinkwait800
+]])
