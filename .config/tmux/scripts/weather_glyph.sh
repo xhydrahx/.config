@@ -35,6 +35,13 @@ case "$weather" in
       echo ""
     fi
     ;;
+  "Drizzle")
+    if [ "$hour" -ge 6 ] && [ "$hour" -lt 18 ]; then
+      echo ""
+    else
+      echo ""
+    fi
+    ;;
   "Light rain")
     if [ "$hour" -ge 6 ] && [ "$hour" -lt 18 ]; then
       echo ""

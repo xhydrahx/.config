@@ -7,7 +7,6 @@ SETUVAR _fisher_jorgebucaran_2F_hydro_files:\x7e/\x2econfig/fish/functions/fish_
 SETUVAR _fisher_plugins:jorgebucaran/fisher\x1ejorgebucaran/hydro
 SETUVAR _fisher_upgraded_to_4_4:\x1d
 SETUVAR _hydro_git_10195:master\x20
-SETUVAR _hydro_git_14453:\x1d
 SETUVAR _hydro_git_14529:\x1d
 SETUVAR _hydro_git_20242:\x1d
 SETUVAR _hydro_git_20593:master\x20
