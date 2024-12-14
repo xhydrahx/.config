@@ -34,4 +34,4 @@ get_memory_usage() {
   fi
 }
 
-echo " CPU: $(get_cpu_usage)   RAM: $(get_memory_usage)"
+echo "  CPU: $(get_cpu_usage)    RAM: $(get_memory_usage)"
