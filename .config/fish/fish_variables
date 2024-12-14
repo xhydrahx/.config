@@ -9,10 +9,10 @@ SETUVAR _fisher_upgraded_to_4_4:\x1d
 SETUVAR _hydro_git_10195:master\x20
 SETUVAR _hydro_git_14453:\x1d
 SETUVAR _hydro_git_14529:\x1d
-SETUVAR _hydro_git_19973:\x1d
 SETUVAR _hydro_git_20242:\x1d
 SETUVAR _hydro_git_20593:master\x20
 SETUVAR _hydro_git_20855:\x1d
+SETUVAR _hydro_git_22823:\x1d
 SETUVAR _hydro_git_23286:master\x20
 SETUVAR _hydro_git_2564:\x1d
 SETUVAR _hydro_git_28835:\x1d
@@ -50,4 +50,4 @@ SETUVAR fish_pager_color_prefix:normal\x1e\x2d\x2dbold\x1e\x2d\x2dunderline
 SETUVAR fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3dcyan
 SETUVAR fish_pager_color_selected_background:\x2dr
 SETUVAR fish_user_paths:/opt/novnc/utils\x1e/opt/novnc/run
-SETUVAR hydro_symbol_git_ahead:\x5cu2191\x20
+SETUVAR hydro_symbol_git_ahead:\u2191\x20
