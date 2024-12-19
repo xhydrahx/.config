@@ -58,13 +58,6 @@ vim.keymap.set('n', '<leader>wd', "<cmd>FzfLua lsp_workspace_diagnostics<CR>", {
 
 vim.keymap.set('n', '<leader>cp', '<cmd>CccPick<CR>', { desc = "Color picker" })
 
-vim.keymap.set('n', '<leader>aa', '<cmd>AvanteAsk<CR>', { desc = "Ask ai" })
-
-vim.keymap.set('n', '<leader>ae', '<cmd>AvanteEditCR>', { desc = "Edit with ai" })
-
-vim.keymap.set('n', '<leader>ar', '<cmd>AvanteRefresh<CR>', { desc = "Refresh" })
-
-
 vim.cmd([[
   au VimLeave * set guicursor=a:ver10-blinkwait800
 ]])
