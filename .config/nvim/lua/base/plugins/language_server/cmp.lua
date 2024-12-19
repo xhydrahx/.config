@@ -53,7 +53,6 @@ cmp.setup({
     { name = 'buffer',   priority = 500 },
     { name = 'path',     priority = 300 },
     { name = 'spell',    priority = 600 },
-    { name = 'ai',       priority = 800 },
   },
   formatting = {
     format = function(entry, vim_item)

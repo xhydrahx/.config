@@ -15,9 +15,7 @@ require("lazy").setup({
     event = "VeryLazy",
     lazy = false,
     version = false,
-    opts = {
-      -- add any opts here
-    },
+    opts = {},
     build = "make",
     dependencies = {
       "stevearc/dressing.nvim",
