@@ -4,15 +4,35 @@ vim.opt.expandtab = true
 vim.opt.autoindent = true
 vim.opt.smartindent = true
 
-vim.opt.number = true
-vim.opt.relativenumber = true
-vim.opt.statuscolumn = "%=%{v:relnum > 0 ? v:relnum : v:lnum} "
+vim.opt.number = false
+vim.opt.relativenumber = false
+vim.opt.statuscolumn = ""
 
 vim.api.nvim_create_augroup("SpecialBufferSettings", { clear = true })
 
-vim.api.nvim_create_autocmd({ "FileType", "BufEnter" }, {
+vim.api.nvim_create_autocmd("BufEnter", {
   group = "SpecialBufferSettings",
   pattern = { "*" },
+  callback = function()
+    if vim.bo.filetype:match("^dap") or vim.fn.expand("%:t") == "dap.log" then
+      vim.opt_local.number = false
+      vim.opt_local.relativenumber = false
+      vim.opt_local.statuscolumn = ""
+    elseif vim.bo.buftype ~= "" then
+      vim.opt_local.number = false
+      vim.opt_local.relativenumber = false
+      vim.opt_local.statuscolumn = ""
+    else
+      vim.opt_local.number = true
+      vim.opt_local.relativenumber = true
+      vim.opt_local.statuscolumn = "%=%{v:relnum > 0 ? v:relnum : v:lnum} "
+    end
+  end,
+})
+
+vim.api.nvim_create_autocmd("TermOpen", {
+  group = "SpecialBufferSettings",
+  pattern = "*",
   callback = function()
     vim.opt_local.number = false
     vim.opt_local.relativenumber = false
@@ -20,12 +40,13 @@ vim.api.nvim_create_autocmd({ "FileType", "BufEnter" }, {
   end,
 })
 
-vim.api.nvim_create_autocmd("BufEnter", {
+vim.api.nvim_create_autocmd("FileType", {
   group = "SpecialBufferSettings",
+  pattern = { "alpha", "dashboard", "terminal" },
   callback = function()
-    vim.opt.number = true
-    vim.opt.relativenumber = true
-    vim.opt.statuscolumn = "%=%{v:relnum > 0 ? v:relnum : v:lnum} "
+    vim.opt_local.number = false
+    vim.opt_local.relativenumber = false
+    vim.opt_local.statuscolumn = ""
   end,
 })
 
@@ -57,7 +78,7 @@ vim.keymap.set('n', '<leader>wd', "<cmd>FzfLua lsp_workspace_diagnostics<CR>", {
 
 vim.keymap.set('n', '<leader>cp', '<cmd>CccPick<CR>', { desc = "Color picker" })
 
-vim.keymap.set('n', '<leader>ac', '<cmd>CopilotChat<CR>', { desc = "Chat with ai" })
+vim.keymap.set('n', '<leader>aa', '<cmd>AvanteAsk<CR>', { desc = "Chat with ai" })
 
 vim.keymap.set('n', '<leader>as', function()
   if require('copilot.client').is_disabled() then
@@ -68,6 +89,12 @@ vim.keymap.set('n', '<leader>as', function()
     print("Copilot disabled")
   end
 end, { desc = "Toggle Copilot completion" })
+
+vim.keymap.set('n', '<leader>dl', '<cmd>DapShowLog<CR>')
+vim.keymap.set('n', '<leader>dr', '<cmd>DapToggleRepo<CR>')
+vim.keymap.set('n', '<leader>dn', '<cmd>DapNew<CR>')
+vim.keymap.set('n', '<leader>db', '<cmd>DapToggleBreakpoint<CR>')
+vim.keymap.set('n', '<leader>dt', '<cmd>DapTerminite<CR>')
 
 vim.cmd([[
   au VimLeave * set guicursor=a:ver10-blinkwait800
