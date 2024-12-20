@@ -1,6 +1,12 @@
 ---@diagnostic disable: redundant-parameter
 local cmp = require('cmp')
 local lspkind = require('lspkind')
+lspkind.init({
+  symbol_map = {
+    Copilot = " ",
+  },
+})
+
 local cmp_autopairs = require('nvim-autopairs.completion.cmp')
 
 cmp.event:on('confirm_done', cmp_autopairs.on_confirm_done())
@@ -49,6 +55,7 @@ cmp.setup({
   },
   sources = {
     { name = 'nvim_lsp', priority = 1000 },
+    { name = 'copilot',  priority = 900 },
     { name = 'luasnip',  priority = 800 },
     { name = 'buffer',   priority = 500 },
     { name = 'path',     priority = 300 },
@@ -62,6 +69,7 @@ cmp.setup({
 
       vim_item.menu = ({
         nvim_lsp = "",
+        copilot  = "",
         luasnip  = "",
         buffer   = "",
         path     = "",

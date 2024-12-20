@@ -11,6 +11,42 @@ vim.opt.termguicolors = true
 
 require("lazy").setup({
   {
+    "rcarriga/nvim-dap-ui",
+    dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" }
+  },
+  {
+    "zbirenbaum/copilot-cmp",
+    config = function()
+      require("copilot_cmp").setup()
+    end
+  },
+  {
+    "CopilotC-Nvim/CopilotChat.nvim",
+    dependencies = {
+      {
+        "zbirenbaum/copilot.lua",
+        cmd = "Copilot",
+        event = "InsertEnter",
+        config = function()
+          ---@diagnostic disable-next-line: undefined-field
+          require("copilot").setup({
+            suggestion = { enabled = false },
+            panel = { enabled = false },
+          })
+        end,
+      },
+      { "nvim-lua/plenary.nvim" },
+    },
+    build = "make tiktoken",
+    opts = {},
+    mappings = {
+      submit_prompt = {
+        normal = '<Leader>s',
+        insert = '<C-s>'
+      }
+    },
+  },
+  {
     "uga-rosa/ccc.nvim",
     config = function()
       require("ccc").setup({

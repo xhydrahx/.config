@@ -5,7 +5,14 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "FiraCode Nerd Font:size=11:antialias=true:autohint=true";
+
+/* Primary font */
+static char *font = "VictorMono Nerd Font:size=11:antialias=true:autohint=true";
+
+/* Fallback fonts */
+static char *font2[] = { 
+  "Symbols Nerd Font:size=11:antialias=true:autohint=true"
+};
 
 static int borderpx = 2;
 

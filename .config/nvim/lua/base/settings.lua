@@ -10,9 +10,9 @@ vim.opt.statuscolumn = "%=%{v:relnum > 0 ? v:relnum : v:lnum} "
 
 vim.api.nvim_create_augroup("SpecialBufferSettings", { clear = true })
 
-vim.api.nvim_create_autocmd("TermOpen", {
+vim.api.nvim_create_autocmd({ "FileType", "BufEnter" }, {
   group = "SpecialBufferSettings",
-  pattern = "*",
+  pattern = { "*" },
   callback = function()
     vim.opt_local.number = false
     vim.opt_local.relativenumber = false
@@ -20,13 +20,12 @@ vim.api.nvim_create_autocmd("TermOpen", {
   end,
 })
 
-vim.api.nvim_create_autocmd("FileType", {
+vim.api.nvim_create_autocmd("BufEnter", {
   group = "SpecialBufferSettings",
-  pattern = { "alpha", "dashboard", "lazy", "terminal" },
   callback = function()
-    vim.opt_local.number = false
-    vim.opt_local.relativenumber = false
-    vim.opt_local.statuscolumn = ""
+    vim.opt.number = true
+    vim.opt.relativenumber = true
+    vim.opt.statuscolumn = "%=%{v:relnum > 0 ? v:relnum : v:lnum} "
   end,
 })
 
@@ -57,6 +56,18 @@ vim.keymap.set('n', '<leader>ws', "<cmd>FzfLua lsp_workspace_symbols<CR>", { des
 vim.keymap.set('n', '<leader>wd', "<cmd>FzfLua lsp_workspace_diagnostics<CR>", { desc = "LSP Workspace Diagnostics" })
 
 vim.keymap.set('n', '<leader>cp', '<cmd>CccPick<CR>', { desc = "Color picker" })
+
+vim.keymap.set('n', '<leader>ac', '<cmd>CopilotChat<CR>', { desc = "Chat with ai" })
+
+vim.keymap.set('n', '<leader>as', function()
+  if require('copilot.client').is_disabled() then
+    vim.cmd("Copilot enable")
+    print("Copilot enabled")
+  else
+    vim.cmd("Copilot disable")
+    print("Copilot disabled")
+  end
+end, { desc = "Toggle Copilot completion" })
 
 vim.cmd([[
   au VimLeave * set guicursor=a:ver10-blinkwait800
