@@ -54,8 +54,8 @@ cmp.setup({
     end, { 'i', 'c' }),
   },
   sources = {
-    { name = 'nvim_lsp', priority = 1000 },
-    { name = 'copilot',  priority = 900 },
+    { name = 'copilot',  priority = 1e3 },
+    { name = 'nvim_lsp', priority = 900 },
     { name = 'luasnip',  priority = 800 },
     { name = 'buffer',   priority = 500 },
     { name = 'path',     priority = 300 },
