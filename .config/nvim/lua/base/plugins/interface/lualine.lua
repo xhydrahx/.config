@@ -1,24 +1,3 @@
-local git_cache = nil
-local last_cwd = nil
-
-local function is_in_git_repo()
-  local cwd = vim.loop.cwd()
-  if cwd ~= last_cwd then
-    last_cwd = cwd
-    local result = vim.fn.system("git rev-parse --is-inside-work-tree 2>/dev/null")
-    git_cache = vim.v.shell_error == 0
-  end
-  return git_cache
-end
-
-local function component()
-  if is_in_git_repo() then
-    return { 'branch', 'diff' }
-  else
-    return { 'filesize', 'encoding' }
-  end
-end
-
 local common_fg = "#AFA099"
 local inactive_bg = "#272321"
 local inactive_fg = "#CAD0D4"
@@ -80,20 +59,7 @@ require('lualine').setup {
         end,
       }
     },
-    lualine_b = component(),
-    lualine_c = {},
-    lualine_x = {},
-    lualine_y = { {
-      'diagnostics',
-      sources = { 'nvim_lsp' },
-      sections = { 'error', 'warn', 'info', 'hint' },
-      diagnostics_color = {
-        error = { fg = '#dc322f' },
-        warn = { fg = '#b58900' },
-        info = { fg = '#268bd2' },
-        hint = { fg = '#2aa198' },
-      },
-    },
+    lualine_b = {
       {
         'filename',
         path = 0,
@@ -107,9 +73,30 @@ require('lualine').setup {
             { default = true })
           return icon .. ' ' .. str
         end,
+      },
+      {
+        'diagnostics',
+        sources = { 'nvim_lsp' },
+        sections = { 'error', 'warn', 'info', 'hint' },
+        diagnostics_color = {
+          error = { fg = '#dc322f' },
+          warn = { fg = '#b58900' },
+          info = { fg = '#268bd2' },
+          hint = { fg = '#2aa198' },
+        },
+      },
+    },
+    lualine_c = {},
+    lualine_x = {},
+    lualine_y = {},
+    lualine_z = {
+      {
+        'progress',
+        fmt = function(str)
+          return ' ' .. str
+        end,
       }
     },
-    lualine_z = { 'location' },
   },
   inactive_sections = {
     lualine_a = {},
