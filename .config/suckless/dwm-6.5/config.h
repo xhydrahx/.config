@@ -7,6 +7,7 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const int vertpad            = 10;       /* vertical padding of bar */
 static const int sidepad            = 10;       /* horizontal padding of bar */
+static const unsigned int gappx = 10; /* gap pixel between windows */
 static const char *fonts[]          = { "monospace:size=10" };
 static const char dmenufont[]       = "monospace:size=10";
 static const char col_gray1[]       = "#1C1917"; /* background color */
@@ -107,6 +108,9 @@ static const Key keys[] = {
 	TAGKEYS(                        XK_8,                      7)
 	TAGKEYS(                        XK_9,                      8)
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
+        { MODKEY,                       XK_minus,  setgaps,        {.i = -1 } },
+        { MODKEY,                       XK_equal,  setgaps,        {.i = +1 } },
+        { MODKEY|ShiftMask,             XK_equal,  setgaps,        {.i = 0  } },
 };
 
 /* button definitions */
