@@ -1,10 +1,10 @@
-# My dotfiles
+# Zenfull setup
 **Configured:**
 * Fish
 * Tmux
 * Neovim
 * Dwm
 * Stterm
+* Dmenu
 
-This setup mainly uses the zenbones theme from neovim.
-Its one of my favorite themes ever.
+This setup mainly uses the colors from zenbones theme from neovim.
