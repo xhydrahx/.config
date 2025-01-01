@@ -24,7 +24,7 @@ require("lazy").setup({
       "nvim-lua/plenary.nvim",
       "MunifTanjim/nui.nvim",
       "hrsh7th/nvim-cmp",
-    "nvim-tree/nvim-web-devicons",
+      "nvim-tree/nvim-web-devicons",
       "zbirenbaum/copilot.lua",
       {
         "HakonHarnes/img-clip.nvim",
@@ -116,7 +116,13 @@ require("lazy").setup({
       require("fzf-lua").setup({
         winopts = {
           backdrop = 100,
-        }
+        },
+        files = {
+          cmd = os.getenv('FZF_DEFAULT_COMMAND'),
+          actions = {
+            ['default'] = require 'fzf-lua.actions'.file_edit,
+          },
+        },
       })
     end
   },
