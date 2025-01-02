@@ -100,6 +100,12 @@ cmp.setup.cmdline('/', {
   },
 })
 
+local ls = require('luasnip')
+ls.add_snippets('html', {
+  ls.parser.parse_snippet("!",
+    "<!DOCTYPE html>\n<html>\n<head>\n    <title>${1:Title}</title>\n</head>\n<body>\n    ${0}\n</body>\n</html>"),
+})
+
 vim.cmd([[highlight CmpPmenu guibg=NONE guifg=#C678DD]])
 vim.cmd([[highlight CmpDoc guibg=NONE guifg=#ABB2BF]])
 vim.cmd([[highlight Pmenu guibg=NONE guifg=#C678DD]])
@@ -110,11 +116,11 @@ vim.cmd([[highlight PmenuSel guibg=NONE guifg=#b0b6bc]])
 
 vim.opt.spell = true
 vim.opt.spelllang = { 'en_us' }
-local ls = require('luasnip')
 
 local doxygen_snippet = ls.parser.parse_snippet("docfn", "/**\n * $1\n *\n * $0\n */")
 
 ls.snippets = {
   c = { doxygen_snippet },
   cpp = { doxygen_snippet },
+  javascript = { doxygen_snippet },
 }

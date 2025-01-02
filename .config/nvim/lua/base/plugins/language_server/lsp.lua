@@ -166,6 +166,34 @@ lspconfig.rust_analyzer.setup {
   capabilities = capabilities,
 }
 
+lspconfig.html.setup {
+  capabilities = capabilities,
+}
+
+lspconfig.cssls.setup {
+  capabilities = capabilities,
+}
+
+lspconfig.ts_ls.setup {
+  init_options = {
+    preferences = {
+      jsxAttributeCompletionStyle = "auto",
+    },
+  },
+  capabilities = capabilities,
+}
+
+lspconfig.eslint.setup {
+  capabilities = require('cmp_nvim_lsp').default_capabilities(),
+  ---@diagnostic disable-next-line: unused-local
+  on_attach = function(client, bufnr)
+    vim.api.nvim_create_autocmd("BufWritePre", {
+      buffer = bufnr,
+      command = "EslintFixAll",
+    })
+  end,
+}
+
 vim.diagnostic.config({
   virtual_text = false,
   underline = true,
