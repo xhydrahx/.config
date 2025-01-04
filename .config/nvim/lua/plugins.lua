@@ -11,6 +11,12 @@ vim.opt.termguicolors = true
 
 require("lazy").setup({
   {
+    "nvim-tree/nvim-web-devicons",
+    config = function()
+      require("nvim-web-devicons").setup({ default = true })
+    end
+  },
+  {
     "yetone/avante.nvim",
     event = "VeryLazy",
     lazy = false,
