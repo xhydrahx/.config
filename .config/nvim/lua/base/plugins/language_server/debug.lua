@@ -20,4 +20,5 @@ dap.configurations.cpp = {
     runInTerminal = false,
   },
 }
+
 dap.configurations.c = dap.configurations.cpp

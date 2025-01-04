@@ -92,13 +92,12 @@ vim.keymap.set('n', '<leader>as', function()
     vim.cmd("Copilot disable")
     print("Copilot disabled")
   end
-end, { desc = "Toggle Copilot completion" })
+end, { desc = "Enable or disable Copilot completion" })
 
 vim.keymap.set('n', '<leader>dl', '<cmd>DapShowLog<CR>')
 vim.keymap.set('n', '<leader>dr', '<cmd>DapToggleRepo<CR>')
-vim.keymap.set('n', '<leader>dn', '<cmd>DapNew<CR>')
+vim.keymap.set('n', '<leader>dc', '<cmd>DapContinue<CR>')
 vim.keymap.set('n', '<leader>db', '<cmd>DapToggleBreakpoint<CR>')
-vim.keymap.set('n', '<leader>dt', '<cmd>DapTerminite<CR>')
 
 vim.cmd([[
   au VimLeave * set guicursor=a:ver10-blinkwait800
