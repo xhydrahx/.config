@@ -32,7 +32,8 @@ static const char *tagsel[][2] = {
   { col_tag_active,  col_gray1 }, /* occ but not sel */
   { col_tag_inactive,  col_gray3 }, /* has pinned tag */
 };
-static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
+
+static const char *tags[] = { "", "", "", "", "", "", "󰑴", "󰼈", "" };
 
 static const Rule rules[] = {
     /* class      instance    title       tags mask     isfloating   monitor */
@@ -47,9 +48,9 @@ static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen win
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "[]=",      tile },    /* first entry is default */
-	{ "><>",      NULL },    /* no layout function means floating behavior */
-	{ "[M]",      monocle },
+	{ "",      tile },    /* first entry is default */
+	{ "",      NULL },    /* no layout function means floating behavior */
+	{ "",      monocle },
 };
 
 /* key definitions */
