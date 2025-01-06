@@ -114,8 +114,13 @@ vim.cmd([[highlight FloatBorder guifg=#837771 guibg=NONE]])
 vim.cmd([[highlight CmpDocBorder guifg=#837771 guibg=NONE]])
 vim.cmd([[highlight PmenuSel guibg=NONE guifg=#b0b6bc]])
 
-vim.opt.spell = true
-vim.opt.spelllang = { 'en_us' }
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+  pattern = { "*.txt", "*.md" },
+  callback = function()
+    vim.opt.spell = true
+    vim.opt.spelllang = { 'en_us' }
+  end
+})
 
 local doxygen_snippet = ls.parser.parse_snippet("docfn", "/**\n * $1\n *\n * $0\n */")
 

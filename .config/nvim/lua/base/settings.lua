@@ -84,6 +84,8 @@ vim.keymap.set('n', '<leader>ac', '<cmd>AvanteClear<CR>', { desc = "Clear ai cha
 
 vim.keymap.set('n', '<leader>ae', '<cmd>AvanteEdit<CR>', { desc = "Edit with ai" })
 
+vim.cmd("Copilot disable")
+
 vim.keymap.set('n', '<leader>as', function()
   if require('copilot.client').is_disabled() then
     vim.cmd("Copilot enable")
