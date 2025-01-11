@@ -1,0 +1,23 @@
+alt + shift + c
+    bspc node -c
+
+alt + shift + Return
+    st
+
+alt + Escape
+    pkill -USR1 -x sxhkd
+
+alt + shift + @space
+    dmenu_run
+
+alt + Escape   
+    pkill -USR1 -x sxhkd
+
+alt + {q,r}               
+    bspc {quit,wm -r}
+
+alt + f
+    bspc node -t \~fullscreen
+
+ctrl + {1-9}
+    bspc desktop -f ^{1-9}
