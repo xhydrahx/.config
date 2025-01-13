@@ -61,7 +61,6 @@ vim.keymap.set('n', '<leader>fb', "<cmd>FzfLua buffers<CR>")
 vim.keymap.set('n', '<leader>fh', "<cmd>FzfLua helptags<CR>")
 
 vim.keymap.set('n', '<leader>tt', MiniFiles.open, {})
-vim.keymap.set('n', '<leader>tf', MiniFiles.close, {})
 
 vim.api.nvim_set_keymap('n', '<leader>xx', ':FzfLua lsp_workspace_diagnostics<CR>', { noremap = true, silent = true })
 
@@ -79,27 +78,8 @@ vim.keymap.set('n', '<leader>wd', "<cmd>FzfLua lsp_workspace_diagnostics<CR>", {
 vim.keymap.set('n', '<leader>cp', '<cmd>CccPick<CR>', { desc = "Color picker" })
 
 vim.keymap.set('n', '<leader>aa', '<cmd>AvanteAsk<CR>', { desc = "Chat with ai" })
-
 vim.keymap.set('n', '<leader>ac', '<cmd>AvanteClear<CR>', { desc = "Clear ai chat" })
-
 vim.keymap.set('n', '<leader>ae', '<cmd>AvanteEdit<CR>', { desc = "Edit with ai" })
-
-vim.cmd("Copilot disable")
-
-vim.keymap.set('n', '<leader>as', function()
-  if require('copilot.client').is_disabled() then
-    vim.cmd("Copilot enable")
-    print("Copilot enabled")
-  else
-    vim.cmd("Copilot disable")
-    print("Copilot disabled")
-  end
-end, { desc = "Enable or disable Copilot completion" })
-
-vim.keymap.set('n', '<leader>dl', '<cmd>DapShowLog<CR>')
-vim.keymap.set('n', '<leader>dr', '<cmd>DapToggleRepo<CR>')
-vim.keymap.set('n', '<leader>dc', '<cmd>DapContinue<CR>')
-vim.keymap.set('n', '<leader>db', '<cmd>DapToggleBreakpoint<CR>')
 
 vim.cmd([[
   au VimLeave * set guicursor=a:ver10-blinkwait800

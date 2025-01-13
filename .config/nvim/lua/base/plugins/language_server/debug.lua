@@ -21,4 +21,5 @@ dap.configurations.cpp = {
   },
 }
 
+---@diagnostic disable-next-line: inject-field
 dap.configurations.c = dap.configurations.cpp

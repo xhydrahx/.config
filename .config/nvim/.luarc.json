@@ -1,5 +1,7 @@
 {
     "diagnostics.disable": [
-        "missing-fields"
+        "missing-fields",
+        "redundant-parameter",
+        "inject-field"
     ]
 }

@@ -11,12 +11,6 @@ vim.opt.termguicolors = true
 
 require("lazy").setup({
   {
-    "nvim-tree/nvim-web-devicons",
-    config = function()
-      require("nvim-web-devicons").setup({ default = true })
-    end
-  },
-  {
     "yetone/avante.nvim",
     event = "VeryLazy",
     lazy = false,
@@ -24,7 +18,6 @@ require("lazy").setup({
     opts = {
       provider = "copilot",
     },
-    build = "make",
     dependencies = {
       "stevearc/dressing.nvim",
       "nvim-lua/plenary.nvim",
@@ -58,24 +51,6 @@ require("lazy").setup({
   {
     "rcarriga/nvim-dap-ui",
     dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" }
-  },
-  {
-    "zbirenbaum/copilot-cmp",
-    config = function()
-      require("copilot_cmp").setup()
-    end
-  },
-  {
-    "zbirenbaum/copilot.lua",
-    cmd = "Copilot",
-    event = "InsertEnter",
-    config = function()
-      ---@diagnostic disable-next-line: undefined-field
-      require("copilot").setup({
-        suggestion = { enabled = false },
-        panel = { enabled = false },
-      })
-    end,
   },
   {
     "uga-rosa/ccc.nvim",
