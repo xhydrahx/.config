@@ -17,7 +17,7 @@ static const char *colors[SchemeLast][2] = {
     [SchemeBorder] = { "#AFA099", NULL },
 };
 /* -l option; if nonzero, dmenu uses vertical list with given number of lines */
-static unsigned int lines      = 5;
+static unsigned int lines      = 10;
 
 /*
  * Characters not considered part of a word while deleting words
