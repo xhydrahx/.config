@@ -88,7 +88,7 @@ require("lazy").setup({
     version = false,
     config = function()
       require('mini.files').setup()
-    end
+    end,
   },
   {
     "ibhagwan/fzf-lua",
@@ -126,13 +126,13 @@ require("lazy").setup({
     'numToStr/Comment.nvim',
     config = function()
       require('Comment').setup()
-    end
+    end,
   },
   {
     "karb94/neoscroll.nvim",
     config = function()
       require('neoscroll').setup({})
-    end
+    end,
   },
   {
     "kdheepak/lazygit.nvim",
@@ -169,7 +169,7 @@ require("lazy").setup({
   {
     "folke/noice.nvim",
     event = "VeryLazy",
-    dependencies = { "MunifTanjim/nui.nvim" }
+    dependencies = { "MunifTanjim/nui.nvim" },
   },
   {
     "goolord/alpha-nvim",
