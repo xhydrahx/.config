@@ -100,6 +100,7 @@ require("lazy").setup({
         },
         files = {
           cmd = os.getenv('FZF_DEFAULT_COMMAND'),
+          git_icons = false,
           actions = {
             ['default'] = require 'fzf-lua.actions'.file_edit,
           },
@@ -113,14 +114,6 @@ require("lazy").setup({
       "cbochs/grapple.nvim",
       "ThePrimeagen/harpoon"
     },
-  },
-  {
-    "kylechui/nvim-surround",
-    version = "*",
-    event = "VeryLazy",
-    config = function()
-      require("nvim-surround").setup({})
-    end
   },
   {
     'numToStr/Comment.nvim',
