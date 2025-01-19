@@ -7,11 +7,8 @@ alt + shift + Return
 alt + Escape
     pkill -USR1 -x sxhkd
 
-alt + shift + @space
+alt + p
     dmenu_run
-
-alt + Escape   
-    pkill -USR1 -x sxhkd
 
 alt + {q,r}               
     bspc {quit,wm -r}
