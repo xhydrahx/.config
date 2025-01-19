@@ -10,6 +10,7 @@ vim.opt.rtp:prepend(lazypath)
 vim.opt.termguicolors = true
 
 require("lazy").setup({
+  { "dstein64/vim-startuptime" },
   {
     "yetone/avante.nvim",
     event = "VeryLazy",
@@ -47,10 +48,6 @@ require("lazy").setup({
         ft = { "markdown", "Avante" },
       },
     },
-  },
-  {
-    "rcarriga/nvim-dap-ui",
-    dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" }
   },
   {
     "uga-rosa/ccc.nvim",
