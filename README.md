@@ -3,7 +3,7 @@
 * Fish
 * Tmux
 * Neovim
-* Dwm
+* Bspwm
 * Stterm
 * Dmenu
 
