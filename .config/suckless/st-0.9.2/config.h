@@ -7,7 +7,7 @@
  */
 
 /* Primary font */
-static char *font = "FiraCode Nerd Font:size=11:antialias=true:autohint=true";
+static char *font = "Iosevka Nerd Font:size=11:antialias=true:autohint=true";
 
 /* Fallback fonts */
 static char *font2[] = { 
