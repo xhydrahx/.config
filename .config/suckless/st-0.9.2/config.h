@@ -8,12 +8,6 @@
 
 /* Primary font */
 static char *font = "Iosevka Nerd Font:size=11:antialias=true:autohint=true";
-
-/* Fallback fonts */
-static char *font2[] = { 
-  "Symbols Nerd Font:size=11:antialias=true:autohint=true"
-};
-
 static int borderpx = 2;
 
 static const int vertpad = 0;  /* Vertical padding */
