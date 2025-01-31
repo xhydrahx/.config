@@ -111,11 +111,9 @@ require("lazy").setup({
     end
   },
   {
-    "cbochs/portal.nvim",
-    dependencies = {
-      "cbochs/grapple.nvim",
-      "ThePrimeagen/harpoon"
-    },
+    "ThePrimeagen/harpoon",
+    branch = "harpoon2",
+    dependencies = { "nvim-lua/plenary.nvim" }
   },
   {
     'numToStr/Comment.nvim',
