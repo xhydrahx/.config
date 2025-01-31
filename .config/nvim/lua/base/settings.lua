@@ -68,9 +68,6 @@ vim.api.nvim_set_keymap('n', '<leader>nm', ':NoiceDismiss<CR>', { noremap = true
 
 vim.api.nvim_set_keymap('n', '<leader>lg', ':LazyGit<CR>', { noremap = true, silent = true })
 
-vim.keymap.set("n", "<leader>o", "<cmd>Portal jumplist backward<cr>")
-vim.keymap.set("n", "<leader>i", "<cmd>Portal jumplist forward<cr>")
-
 vim.keymap.set('n', '<leader>cs', "<cmd>FzfLua lsp_code_actions<CR>", { desc = "LSP Code Actions" })
 vim.keymap.set('n', '<leader>ws', "<cmd>FzfLua lsp_workspace_symbols<CR>", { desc = "LSP Workspace Symbols" })
 vim.keymap.set('n', '<leader>wd', "<cmd>FzfLua lsp_workspace_diagnostics<CR>", { desc = "LSP Workspace Diagnostics" })
@@ -93,7 +90,6 @@ vim.keymap.set("n", "<C-t>", function() harpoon:list():select(2) end)
 vim.keymap.set("n", "<C-n>", function() harpoon:list():select(3) end)
 vim.keymap.set("n", "<C-s>", function() harpoon:list():select(4) end)
 
--- Toggle previous & next buffers stored within Harpoon list
 vim.keymap.set("n", "<C-S-P>", function() harpoon:list():prev() end)
 vim.keymap.set("n", "<C-S-N>", function() harpoon:list():next() end)
 
