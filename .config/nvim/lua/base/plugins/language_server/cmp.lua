@@ -100,14 +100,6 @@ ls.add_snippets('html', {
     "<!DOCTYPE html>\n<html>\n<head>\n    <title>${1:Title}</title>\n</head>\n<body>\n    ${0}\n</body>\n</html>"),
 })
 
-vim.cmd([[highlight CmpPmenu guibg=NONE guifg=#C678DD]])
-vim.cmd([[highlight CmpDoc guibg=NONE guifg=#ABB2BF]])
-vim.cmd([[highlight Pmenu guibg=NONE guifg=#C678DD]])
-vim.cmd([[highlight NormalFloat guibg=NONE]])
-vim.cmd([[highlight FloatBorder guifg=#837771 guibg=NONE]])
-vim.cmd([[highlight CmpDocBorder guifg=#837771 guibg=NONE]])
-vim.cmd([[highlight PmenuSel guibg=NONE guifg=#b0b6bc]])
-
 vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
   pattern = { "*.txt", "*.md" },
   callback = function()

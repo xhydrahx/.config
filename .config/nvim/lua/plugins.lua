@@ -11,6 +11,10 @@ vim.opt.termguicolors = true
 
 require("lazy").setup({
   {
+    "rose-pine/neovim",
+    name = "rose-pine",
+  },
+  {
     "yetone/avante.nvim",
     event = "VeryLazy",
     lazy = false,
@@ -167,16 +171,6 @@ require("lazy").setup({
   {
     "goolord/alpha-nvim",
     event = "VimEnter",
-  },
-  {
-    "zenbones-theme/zenbones.nvim",
-    dependencies = "rktjmp/lush.nvim",
-    lazy = false,
-    priority = 1000,
-    config = function()
-      vim.g.zenbones_darken_comments = 45
-      vim.cmd.colorscheme('zenbones')
-    end
   },
   {
     "nvim-lualine/lualine.nvim",

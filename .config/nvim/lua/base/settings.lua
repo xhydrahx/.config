@@ -51,6 +51,7 @@ vim.api.nvim_create_autocmd("FileType", {
 })
 
 vim.g.mapleader = " "
+vim.cmd("colorscheme rose-pine")
 
 vim.api.nvim_set_keymap('n', '<leader>cl', '<cmd>terminal<CR>', { noremap = true, silent = true })
 vim.api.nvim_set_keymap('t', '<Esc>', '<cmd>e #<CR>', { noremap = true, silent = true })
