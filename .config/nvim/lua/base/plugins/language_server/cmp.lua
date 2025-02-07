@@ -10,12 +10,12 @@ cmp.setup({
   window = {
     completion = {
       border = 'rounded',
-      winhighlight = "Normal:Pmenu,FloatBorder:FloatBorder,CursorLine:PmenuSel,Search:None",
+      winhighlight = "Normal:None,FloatBorder:None,CursorLine:PmenuSel,Search:None",
       scrollbar = false,
     },
     documentation = {
       border = 'rounded',
-      winhighlight = "NormalFloat:CmpDoc,FloatBorder:CmpDocBorder",
+      winhighlight = "NormalFloat:None,FloatBorder:None",
     },
   },
   snippet = {
