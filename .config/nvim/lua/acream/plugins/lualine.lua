@@ -1,4 +1,8 @@
-require('lualine').setup {
+return {
+    "nvim-lualine/lualine.nvim",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    config = function()
+      require('lualine').setup({
   options = {
     globalstatus = true,
     theme = "auto",
@@ -73,14 +77,6 @@ require('lualine').setup {
     lualine_z = {},
   },
   extensions = {},
+})
+end,
 }
-
-vim.cmd([[autocmd! CursorHold * lua require('lualine').refresh()]])
-
-vim.cmd([[
-  augroup cmdheight
-    autocmd!
-    autocmd CmdlineEnter * setlocal cmdheight=0
-    autocmd CmdlineLeave * setlocal cmdheight=0
-  augroup END
-]])
