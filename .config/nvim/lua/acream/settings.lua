@@ -11,3 +11,4 @@ vim.opt.statuscolumn = "%=%{v:relnum > 0 ? v:relnum : v:lnum} "
 vim.g.mapleader = " "
 
 vim.keymap.set('n', '<leader>ff', "<cmd>FZF<CR>")
+vim.keymap.set('n', '<leader>o', "<cmd>Oil<CR>")
