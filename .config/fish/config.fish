@@ -1,6 +1,5 @@
 if status is-interactive
   set -U fish_greeting ""
-  set -U fish_user_paths /opt/novnc/utils $fish_user_paths
 
   alias scrot="scrot ~/media/scrot/%Y-%m-%d_%H-%M-%S.png"
 
