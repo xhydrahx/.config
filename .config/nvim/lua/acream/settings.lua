@@ -10,12 +10,4 @@ vim.opt.statuscolumn = "%=%{v:relnum > 0 ? v:relnum : v:lnum} "
 
 vim.g.mapleader = " "
 
-vim.cmd([[
-  augroup cmdheight
-      autocmd!
-      autocmd CmdlineEnter * setlocal cmdheight=0
-      autocmd CmdlineLeave * setlocal cmdheight=0
-    augroup END
-]])
-
 vim.keymap.set('n', '<leader>ff', "<cmd>FZF<CR>")
