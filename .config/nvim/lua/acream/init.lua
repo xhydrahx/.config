@@ -1,2 +1,3 @@
-require("acream.lazy")
 require("acream.settings")
+require("acream.lazy")
+
