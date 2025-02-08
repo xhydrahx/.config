@@ -7,4 +7,4 @@
 * Stterm
 * Dmenu
 
-This setup mainly uses the colors from zenbones theme from neovim.
+This setup mainly uses the rose-pine colorscheme
