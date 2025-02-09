@@ -1,5 +1,5 @@
 return {
-    'neovim/nvim-lspconfig',
+    "neovim/nvim-lspconfig",
     config = function()
         local has_mason, mason = pcall(require, "mason")
         if not has_mason then
