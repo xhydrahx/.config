@@ -7,7 +7,9 @@ if status is-interactive
   fish_config theme choose "Rosé Pine"
 end
 
+if set -q TMUX
+  set -gx TERM tmux-256color
+end
+
 set -x CC clang
 set -x CXX clang++
-
-set TERM st
