@@ -4,7 +4,7 @@ if status is-interactive
   alias scrot="scrot ~/media/scrot/%Y-%m-%d_%H-%M-%S.png"
 
   export FZF_DEFAULT_COMMAND="find . -type f -not -path '*/node_modules/*' -not -path '*/.git/*'"
-  fish_config theme choose "Rosé Pine"
+  theme_gruvbox dark hard
 end
 
 if set -q TMUX
