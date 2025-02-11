@@ -99,36 +99,35 @@ char *termname = "st-256color";
 unsigned int tabspaces = 8;
 
 static const char *colorname[] = {
-    "#26233a",
-    "#eb6f92",
-    "#9ccfd8",
-    "#f6c177",
-    "#31748f",
-    "#c4a7e7",
-    "#ebbcba",
-    "#e0def4",
-    "#6e6a86",
-    "#eb6f92",
-    "#9ccfd8",
-    "#f6c177",
-    "#31748f",
-    "#c4a7e7",
-    "#ebbcba",
-    "#e0def4",
-    [255] = 0,
-    /* more colors can be added after 255 to use with DefaultXX */
-    [256] = "#191724",
-};
+  /* 8 normal colors */
+  [0] = "#282828", /* hard contrast: #1d2021 / soft contrast: #32302f */
+  [1] = "#ea6962", /* red     */
+  [2] = "#a9b665", /* green   */
+  [3] = "#d8a657", /* yellow  */
+  [4] = "#7daea3", /* blue    */
+  [5] = "#d3869b", /* magenta */
+  [6] = "#89b482", /* cyan    */
+  [7] = "#d4be98", /* white   */
 
+  /* 8 bright colors */
+  [8]  = "#928374", /* black   */
+  [9]  = "#ef938e", /* red     */
+  [10] = "#bbc585", /* green   */
+  [11] = "#e1bb7e", /* yellow  */
+  [12] = "#9dc2ba", /* blue    */
+  [13] = "#e1acbb", /* magenta */
+  [14] = "#a7c7a2", /* cyan    */
+  [15] = "#e2d3ba", /* white   */
+};
 
 /*
  * Default colors (colorname index)
- * foreground, background, cursor, reverse cursor
+ * foreground, background, cursor
  */
-unsigned int defaultbg = 256;
-unsigned int defaultfg = 7;
-unsigned int defaultcs = 7;
-unsigned int defaultrcs = 7;
+unsigned int defaultfg = 15;
+unsigned int defaultbg = 0;
+unsigned int defaultcs = 15;
+static unsigned int defaultrcs = 257;
 
 /*
  * Default shape of cursor
