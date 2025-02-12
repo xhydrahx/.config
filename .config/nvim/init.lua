@@ -1,1 +1,2 @@
-require('acream')
+require("acream.lazy")
+require("acream")

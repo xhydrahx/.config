@@ -10,5 +10,18 @@ vim.opt.statuscolumn = "%=%{v:relnum > 0 ? v:relnum : v:lnum} "
 
 vim.g.mapleader = " "
 
-vim.keymap.set('n', '<leader>ff', "<cmd>FZF<CR>")
-vim.keymap.set('n', '<leader>o', "<cmd>Oil<CR>")
+vim.keymap.set('n', "<leader>ff", function()
+    Snacks.picker.files()
+end)
+
+vim.keymap.set('n', "<leader>fg", function ()
+    Snacks.picker.grep()
+end)
+
+vim.keymap.set('n', "<leader>fr", function ()
+    Snacks.picker.recent()
+end)
+
+vim.keymap.set('n', "<leader>e", function ()
+    Snacks.explorer()
+end)
