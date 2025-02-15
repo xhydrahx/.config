@@ -1,20 +1,21 @@
 {
   "blink-cmp-copilot": { "branch": "main", "commit": "5d4ed42c5d7d144012792bb6cc4ac7899a108169" },
-  "blink.cmp": { "branch": "main", "commit": "f22ca35d06b2210ebc84280be94caa11cf2ffe9f" },
+  "blink.cmp": { "branch": "main", "commit": "035e1bae395b2b34c6cf0234f4270bf9481905b4" },
   "copilot.lua": { "branch": "master", "commit": "30321e33b03cb924fdcd6a806a0dc6fa0b0eafb9" },
   "friendly-snippets": { "branch": "main", "commit": "efff286dd74c22f731cdec26a70b46e5b203c619" },
   "gruvbox-material": { "branch": "master", "commit": "1aa1842d80a8845842b9340df2d93683d667247b" },
   "lazy.nvim": { "branch": "main", "commit": "ac21a639c7ecfc8b822dcc9455deceea3778f839" },
   "lazydev.nvim": { "branch": "main", "commit": "a1b78b2ac6f978c72e76ea90ae92a94edf380cfc" },
   "lualine.nvim": { "branch": "master", "commit": "f4f791f67e70d378a754d02da068231d2352e5bc" },
+  "lush.nvim": { "branch": "main", "commit": "45a79ec4acb5af783a6a29673a999ce37f00497e" },
   "mason-lspconfig.nvim": { "branch": "main", "commit": "a8e6efcf623b86bae6d2223eede7c43883329f80" },
-  "mason.nvim": { "branch": "main", "commit": "5664dd5deb3ac9527da90691543eb28df51c1ef8" },
+  "mason.nvim": { "branch": "main", "commit": "f9f3b464dda319288b8ce592e53f0d9cf9ca8b4e" },
   "noice.nvim": { "branch": "main", "commit": "0427460c2d7f673ad60eb02b35f5e9926cf67c59" },
   "nui.nvim": { "branch": "main", "commit": "53e907ffe5eedebdca1cd503b00aa8692068ca46" },
   "nvim-autopairs": { "branch": "master", "commit": "68f0e5c3dab23261a945272032ee6700af86227a" },
   "nvim-lspconfig": { "branch": "master", "commit": "7af2c37192deae28d1305ae9e68544f7fb5408e1" },
   "nvim-treesitter": { "branch": "master", "commit": "00a513f87ee3c339c2024b08db3eb63ba7736ed6" },
   "nvim-web-devicons": { "branch": "master", "commit": "1020869742ecb191f260818234517f4a1515cfe8" },
-  "rustaceanvim": { "branch": "master", "commit": "bc8c4b8f7606d5b7c067cd8369e25c1a7ff77bd0" },
-  "snacks.nvim": { "branch": "main", "commit": "57445057395fd1f5b315defa367c57651ea2e5f2" }
+  "snacks.nvim": { "branch": "main", "commit": "57445057395fd1f5b315defa367c57651ea2e5f2" },
+  "zenbones.nvim": { "branch": "main", "commit": "9ef4241c50ea24026b732512223dbc55589ce2c4" }
 }

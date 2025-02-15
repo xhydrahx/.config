@@ -1,8 +1,10 @@
 return {
-    "sainnhe/gruvbox-material",
+    "zenbones-theme/zenbones.nvim",
+    dependencies = {
+        "rktjmp/lush.nvim"
+    },
     config = function()
-        vim.g.gruvbox_material_background = "hard"
-        vim.g.gruvbox_material_palette = "material"
-        vim.cmd.colorscheme("gruvbox-material")
+        vim.cmd.colorscheme("zenbones")
+        vim.api.nvim_set_hl(0, "NormalFloat", { bg = "NONE" })
     end
 }
