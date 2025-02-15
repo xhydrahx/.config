@@ -12,8 +12,9 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-    { import = "acream.plugins" },
-    { import = "acream.plugins.lsp" }
+    { import = "acream.plugins.utility" },
+    { import = "acream.plugins.coding" },
+    { import = "acream.plugins.ui" }
 }, {
     checker = {
         enabled = true,

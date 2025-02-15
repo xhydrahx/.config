@@ -5,6 +5,7 @@
         "inject-field"
     ],
     "diagnostics.globals": [
-        "on_attach"
+        "on_attach",
+        "setup"
     ]
 }
