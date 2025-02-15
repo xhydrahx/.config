@@ -5,12 +5,19 @@ function M.setup(on_attach, capabilities)
         on_attach = on_attach,
         capabilities = capabilities,
         settings = {
-            ["rust-analyzer"] = {
-                checkOnSave = {
-                    command = "clippy",
+            ['rust-analyzer'] = {
+                procMacro = {
+                    enable = true
                 },
-            },
-        },
+                diagnostics = {
+                    enable = true,
+                    experimental = {
+                        enable = true
+                    },
+                    enableExperimental = true,
+                },
+            }
+        }
     })
 end
 
