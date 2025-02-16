@@ -16,6 +16,9 @@ function M.setup(on_attach, capabilities)
                     },
                     enableExperimental = true,
                 },
+                checkOnSave = {
+                    command = "clippy"
+                },
             }
         }
     })

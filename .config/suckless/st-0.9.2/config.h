@@ -98,36 +98,42 @@ char *termname = "st-256color";
  */
 unsigned int tabspaces = 8;
 
+/* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
-  /* 8 normal colors */
-  [0] = "#282828", /* hard contrast: #1d2021 / soft contrast: #32302f */
-  [1] = "#ea6962", /* red     */
-  [2] = "#a9b665", /* green   */
-  [3] = "#d8a657", /* yellow  */
-  [4] = "#7daea3", /* blue    */
-  [5] = "#d3869b", /* magenta */
-  [6] = "#89b482", /* cyan    */
-  [7] = "#d4be98", /* white   */
+    /* 8 normal colors */
+    [0] = "#1C1917", /* black   */
+    [1] = "#DE6E7C", /* red     */
+    [2] = "#819B69", /* green   */
+    [3] = "#B77E64", /* yellow  */
+    [4] = "#6099C0", /* blue    */
+    [5] = "#B279A7", /* magenta */
+    [6] = "#66A5AD", /* cyan    */
+    [7] = "#B4BDC3", /* white   */
 
-  /* 8 bright colors */
-  [8]  = "#928374", /* black   */
-  [9]  = "#ef938e", /* red     */
-  [10] = "#bbc585", /* green   */
-  [11] = "#e1bb7e", /* yellow  */
-  [12] = "#9dc2ba", /* blue    */
-  [13] = "#e1acbb", /* magenta */
-  [14] = "#a7c7a2", /* cyan    */
-  [15] = "#e2d3ba", /* white   */
+    /* 8 bright colors */
+    [8]  = "#403833", /* black   */
+    [9]  = "#E8838F", /* red     */
+    [10] = "#8BAE68", /* green   */
+    [11] = "#D68C67", /* yellow  */
+    [12] = "#61ABDA", /* blue    */
+    [13] = "#CF86C1", /* magenta */
+    [14] = "#65B8C1", /* cyan    */
+    [15] = "#888F94", /* white   */
+
+    /* special colors */
+    [256] = "#B4BDC3", /* foreground */
+    [257] = "#1C1917", /* background */
+    [258] = "#C4CACF", /* cursor */
 };
 
 /*
  * Default colors (colorname index)
- * foreground, background, cursor
+ * foreground, background, cursor, reverse cursor
  */
-unsigned int defaultfg = 15;
-unsigned int defaultbg = 0;
-unsigned int defaultcs = 15;
-static unsigned int defaultrcs = 257;
+unsigned int defaultfg = 256; /* Foreground color */
+unsigned int defaultbg = 257; /* Background color */
+unsigned int defaultcs = 258; /* Cursor color */
+static unsigned int defaultrcs = 257; /* Reverse cursor color */
 
 /*
  * Default shape of cursor
