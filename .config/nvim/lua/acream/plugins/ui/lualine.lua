@@ -1,39 +1,39 @@
 return {
     "nvim-lualine/lualine.nvim",
-    dependencies = { "nvim-tree/nvim-web-devicons" },
+    dependencies = "nvim-tree/nvim-web-devicons",
     config = function()
         local common_fg = "#AFA099"
         local inactive_bg = "#272321"
         local inactive_fg = "#CAD0D4"
 
         local zenbones = {
-              normal = {
-                    a = { bg = "#59514D", fg = common_fg, gui = "bold" },
-                    b = { bg = "#433C39", fg = common_fg },
-                    c = { bg = inactive_bg, fg = "#B4BDC3" },
-                  },
+            normal = {
+                a = { bg = "#59514D", fg = common_fg, gui = "bold" },
+                b = { bg = "#433C39", fg = common_fg },
+                c = { bg = inactive_bg, fg = "#B4BDC3" },
+            },
 
-              insert = {
-                    a = { bg = "#324757", fg = common_fg, gui = "bold" },
-                  },
+            insert = {
+                a = { bg = "#324757", fg = common_fg, gui = "bold" },
+            },
 
-              command = {
-                    a = { bg = "#65435E", fg = common_fg, gui = "bold" },
-                  },
+            command = {
+                a = { bg = "#65435E", fg = common_fg, gui = "bold" },
+            },
 
-              visual = {
-                    a = { bg = "#3D4042", fg = common_fg, gui = "bold" },
-                  },
+            visual = {
+                a = { bg = "#3D4042", fg = common_fg, gui = "bold" },
+            },
 
-              replace = {
-                    a = { bg = "#3E2225", fg = common_fg, gui = "bold" },
-                  },
+            replace = {
+                a = { bg = "#3E2225", fg = common_fg, gui = "bold" },
+            },
 
-              inactive = {
-                    a = { bg = inactive_bg, fg = inactive_fg, gui = "bold" },
-                    b = { bg = inactive_bg, fg = inactive_fg },
-                    c = { bg = inactive_bg, fg = inactive_fg },
-                  },
+            inactive = {
+                a = { bg = inactive_bg, fg = inactive_fg, gui = "bold" },
+                b = { bg = inactive_bg, fg = inactive_fg },
+                c = { bg = inactive_bg, fg = inactive_fg },
+            },
         }
         require('lualine').setup({
             options = {
