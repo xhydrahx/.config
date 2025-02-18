@@ -18,6 +18,7 @@ SETUVAR _hydro_git_11732:\x1d
 SETUVAR _hydro_git_11896:main\x20
 SETUVAR _hydro_git_12077:\x1d
 SETUVAR _hydro_git_12509:main\x20\u2191\x201\x20
+SETUVAR _hydro_git_12668:\x1d
 SETUVAR _hydro_git_13093:main\u2022\x20
 SETUVAR _hydro_git_1328:main\x20
 SETUVAR _hydro_git_13379:main\u2022\x20
@@ -107,7 +108,7 @@ SETUVAR _hydro_git_7786:\x1d
 SETUVAR _hydro_git_8882:master\u2022\x20
 SETUVAR _hydro_git_8932:rewrite\u2022\x20
 SETUVAR _hydro_git_9084:main\u2022\x20
-SETUVAR _hydro_git_9561:\x1d
+SETUVAR _hydro_git_9561:main\x20
 SETUVAR _hydro_git_9837:\x1d
 SETUVAR _hydro_git_9998:main\x20
 SETUVAR fish_color_autosuggestion:brblack
