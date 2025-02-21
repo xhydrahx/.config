@@ -34,9 +34,3 @@ end)
 vim.keymap.set("n", "<leader>e", function()
     Snacks.explorer()
 end)
-
-vim.keymap.set("v", "<leader>aa", "<cmd>AvanteAsk<CR>")
-vim.keymap.set("v", "<leader>ae", "<cmd>AvanteEdit<CR>")
-
-vim.keymap.set("n", "<leader>aa", "<cmd>AvanteAsk<CR>")
-vim.keymap.set("n", "<leader>ac", "<cmd>AvanteClear<CR>")
