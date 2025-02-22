@@ -6,6 +6,7 @@
     ],
     "diagnostics.globals": [
         "on_attach",
-        "setup"
+        "setup",
+        "Snacks"
     ]
 }

@@ -6,14 +6,14 @@ return {
         bigfile = { enabled = true },
         dashboard = { enabled = true, example = "doom" },
         explorer = { enabled = true },
+        picker = { enabled = true },
         indent = { enabled = true },
         input = { enabled = true },
-        picker = { enabled = true },
         notifier = { enabled = false },
         quickfile = { enabled = true },
         scope = { enabled = true },
         scroll = { enabled = true },
         statuscolumn = { enabled = false },
         words = { enabled = true },
-    },
+    }
 }
