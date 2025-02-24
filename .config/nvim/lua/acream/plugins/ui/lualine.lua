@@ -35,6 +35,7 @@ return {
                 c = { bg = inactive_bg, fg = inactive_fg },
             },
         }
+
         require('lualine').setup({
             options = {
                 globalstatus = true,
