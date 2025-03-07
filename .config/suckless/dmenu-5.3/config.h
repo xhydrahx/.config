@@ -6,7 +6,7 @@ static int centered = 1;
 static int min_width = 500;
 /* -fn option overrides fonts[0]; default X11 font or font set */
 static const char *fonts[] = {
-	"Victor Mono:size=11"
+	"CommitMono Nerd Font:size=11"
 };
 static const char *prompt      = NULL;      /* -p  option; prompt to the left of input field */
 static const char *colors[SchemeLast][2] = {
