@@ -7,6 +7,7 @@
 "ui.statusline.inactive" = { fg = "#CAD0D4", bg = "#272321" }
 "ui.cursor" = { fg = "#1C1917", bg = "#C4CACF" }
 "ui.cursor.primary" = { fg = "#1C1917", bg = "#797F84" }
+"ui.menu.selected" = { fg = "#B4BDC3", modifiers = ["bold"] }
 
 "comment" = { fg = "#6e6763", modifiers = ["italic"] }
 "constant" = { fg = "#979fa4" }
