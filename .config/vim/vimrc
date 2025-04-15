@@ -1,0 +1,26 @@
+call plug#begin('~/.vim/plugged')
+
+Plug 'yegappan/lsp'
+Plug 'altercation/vim-colors-solarized'
+
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+
+call plug#end()
+
+let g:mapleader = " "
+
+syntax enable
+set background=dark
+colorscheme solarized
+
+let lspOpts = #{autoHighlightDiags: v:true}
+autocmd User LspSetup call LspOptionsSet(lspOpts)
+
+let lspServers = [#{
+	\	  name: 'rustanalyzer',
+	\	  filetype: ['rust'],
+	\	  path: 'rust-analyzer',
+	\	  args: []
+	\ }]
+autocmd User LspSetup call LspAddServer(lspServers)
