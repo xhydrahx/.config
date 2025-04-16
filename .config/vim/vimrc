@@ -22,10 +22,12 @@ syntax enable
 set background=dark
 colorscheme gruvbox
 
+set noswapfile
+
 set number
 set rnu
-highlight LineNr ctermbg=8
-highlight SignColumn ctermbg=8
+highlight LineNr ctermbg=0
+highlight SignColumn ctermbg=0
 set laststatus=0
 
 let lspOpts = #{autoHighlightDiags: v:true}
