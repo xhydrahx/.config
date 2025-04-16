@@ -1,0 +1,40 @@
+call plug#begin('~/.vim/plugged')
+
+Plug 'yegappan/lsp'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'morhetz/gruvbox'
+
+call plug#end()
+
+let g:mapleader = " "
+
+nnoremap <leader>ff :GFiles!<Cr>
+
+nnoremap <leader>ca :LspCodeAction<Cr>
+nnoremap <leader>f :LspFormat<Cr>
+nnoremap <leader>gd :LspGotoDefinition<Cr>
+nnoremap K :LspHover<CR>
+nnoremap <leader>rn :LspRename<Cr>
+nnoremap <leader>i :LspDiag current<Cr>
+
+syntax enable
+set background=dark
+colorscheme gruvbox
+
+set number
+set rnu
+highlight LineNr ctermbg=8
+highlight SignColumn ctermbg=8
+set laststatus=0
+
+let lspOpts = #{autoHighlightDiags: v:true}
+autocmd User LspSetup call LspOptionsSet(lspOpts)
+
+let lspServers = [#{
+	\	  name: 'rustanalyzer',
+	\	  filetype: ['rust'],
+	\	  path: 'rust-analyzer',
+	\	  args: []
+	\ }]
+autocmd User LspSetup call LspAddServer(lspServers)
