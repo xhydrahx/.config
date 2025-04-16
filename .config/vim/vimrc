@@ -1,9 +1,16 @@
 call plug#begin('~/.vim/plugged')
 
 Plug 'yegappan/lsp'
+<<<<<<< HEAD
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'morhetz/gruvbox'
+=======
+Plug 'altercation/vim-colors-solarized'
+
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+>>>>>>> 3619941918dc6fbfaed315babece09044953d898
 
 call plug#end()
 
@@ -20,7 +27,11 @@ nnoremap <leader>i :LspDiag current<Cr>
 
 syntax enable
 set background=dark
+<<<<<<< HEAD
 colorscheme gruvbox
+=======
+colorscheme solarized
+>>>>>>> 3619941918dc6fbfaed315babece09044953d898
 
 set number
 set rnu

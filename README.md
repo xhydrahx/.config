@@ -7,4 +7,4 @@
 * Stterm
 * Dmenu
 
-This setup mainly uses the rose-pine colorscheme
+This setup mainly uses the gruvbox colorscheme
