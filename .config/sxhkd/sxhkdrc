@@ -2,7 +2,7 @@ alt + shift + c
     bspc node -c
 
 alt + shift + Return
-    st
+    alacritty
 
 alt + Escape
     pkill -USR1 -x sxhkd
