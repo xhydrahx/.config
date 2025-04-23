@@ -1,9 +1,9 @@
 # Zenfull setup
 **Configured:**
-* Fish
+* Sh/Bash
 * Tmux
-* Neovim
-* Bspwm
+* Vim
+* Dwm
 * Stterm
 * Dmenu
 
