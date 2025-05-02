@@ -1,55 +1,41 @@
-(defvar bootstrap-version)
-(let ((bootstrap-file
-       (expand-file-name
-        "straight/repos/straight.el/bootstrap.el"
-        (or (bound-and-true-p straight-base-dir)
-            user-emacs-directory)))
-      (bootstrap-version 7))
-  (unless (file-exists-p bootstrap-file)
-    (with-current-buffer
-        (url-retrieve-synchronously
-         "https://raw.githubusercontent.com/radian-software/straight.el/develop/install.el"
-         'silent 'inhibit-cookies)
-      (goto-char (point-max))
-      (eval-print-last-sexp)))
-  (load bootstrap-file nil 'nomessage))
+(setq make-backup-files nil)
 
-(straight-use-package 'gruvbox-theme)
+(setq display-line-numbers-type 'relative)
+(global-display-line-numbers-mode t)
+
+(require 'package)
+(package-initialize)
+
+(unless package-archive-contents
+  (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
+  (package-refresh-contents))
+
+(unless (package-installed-p 'gruvbox-theme)
+  (package-install 'gruvbox-theme))
+
 (load-theme 'gruvbox t)
+
 (menu-bar-mode -1)
 
-(straight-use-package 'rust-mode)
-(straight-use-package 'lsp-mode)
-(straight-use-package 'lsp-treemacs)
-(straight-use-package 'lsp-ui)
-(straight-use-package 'which-key)
-
-(require 'lsp-mode)
-
-(setq lsp-keymap-prefix "C-c l")
-(setq lsp-rust-server 'rust-analyzer)
-
-(which-key-mode)
-
-(add-hook 'prog-mode-hook 'lsp-deferred)
-(setq lsp-warn-no-matched-clients nil)
-
-(setq lsp-enable-symbol-highlighting t)
-(setq lsp-ui-doc-enable t)
-(setq lsp-ui-doc-show-with-cursor t)
-
-(setq lsp-auto-guess-root t)
-
-(straight-use-package 'company)
-(straight-use-package 'company-lsp)
+(dolist (pkg '(rust-mode eglot company which-key))
+  (unless (package-installed-p pkg)
+    (package-install pkg)))
 
 (require 'company)
 (add-hook 'after-init-hook 'global-company-mode)
-
 (setq company-idle-delay 0.1)
 (setq company-minimum-prefix-length 1)
 
-(with-eval-after-load 'company
-  (add-to-list 'company-backends 'company-capf))
+(which-key-mode)
 
-(setq lsp-completion-provider :capf)
+(add-hook 'prog-mode-hook 'eglot-ensure)
+
+(defun my/setup-company-for-eglot ()
+  (setq-local company-backends '(company-capf))
+  (company-mode 1))
+
+(add-hook 'eglot-managed-mode-hook #'my/setup-company-for-eglot)
+
+(add-hook 'rust-mode-hook
+          (lambda ()
+            (eglot-ensure)))
