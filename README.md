@@ -1,8 +1,7 @@
 # Zenfull setup
 **Configured:**
 * Sh/Bash
-* Tmux
-* Vim
+* Emacs
 * Dwm
 * Stterm
 * Dmenu
