@@ -19,19 +19,20 @@
 (menu-bar-mode -1)
 
 (straight-use-package 'rust-mode)
-
 (straight-use-package 'lsp-mode)
 (straight-use-package 'lsp-treemacs)
 (straight-use-package 'lsp-ui)
 (straight-use-package 'which-key)
 
 (require 'lsp-mode)
+
 (setq lsp-keymap-prefix "C-c l")
 (setq lsp-rust-server 'rust-analyzer)
 
 (which-key-mode)
 
-(add-hook 'rust-mode-hook 'lsp)
+(add-hook 'prog-mode-hook 'lsp-deferred)
+(setq lsp-warn-no-matched-clients nil)
 
 (setq lsp-enable-symbol-highlighting t)
 (setq lsp-ui-doc-enable t)
