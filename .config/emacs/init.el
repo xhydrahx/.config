@@ -1,21 +1,38 @@
 (setq make-backup-files nil)
 
-(setq display-line-numbers-type 'relative)
-(global-display-line-numbers-mode t)
+(menu-bar-mode -1)
 
 (require 'package)
+(setq package-archives
+      '(("melpa" . "https://melpa.org/packages/")
+        ("gnu"   . "https://elpa.gnu.org/packages/")))
 (package-initialize)
+;; (package-refresh-contents)
 
-(unless package-archive-contents
-  (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
-  (package-refresh-contents))
-
-(unless (package-installed-p 'gruvbox-theme)
-  (package-install 'gruvbox-theme))
+(dolist (pkg '(fzf gruvbox-theme doom-modeline))
+  (unless (package-installed-p pkg)
+    (package-install pkg)))
 
 (load-theme 'gruvbox t)
 
-(menu-bar-mode -1)
+(require 'doom-modeline)
+(doom-modeline-mode 1)
+
+(setq doom-modeline-lsp t)
+(setq doom-modeline-modal-modern-icon t)
+(setq doom-modeline-project-detection 'auto)
+(setq doom-modeline-buffer-file-name-style 'auto)
+(setq doom-modeline-unicode-fallback t)
+(setq doom-modeline-column-zero-based t)
+(setq doom-modeline-position-line-format '("%l/%c"))
+(setq doom-modeline-minor-modes nil)
+(setq doom-modeline-project-name t)
+(setq doom-modeline-lsp t)
+(setq doom-modeline-env-version nil)
+(setq doom-modeline-modal-modern-icon t)
+(setq doom-modeline-percent-position nil)
+(setq doom-modeline-buffer-encoding nil)
+(setq doom-modeline-checker-simple-format t)
 
 (dolist (pkg '(rust-mode eglot company which-key))
   (unless (package-installed-p pkg)
