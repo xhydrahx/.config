@@ -70,4 +70,5 @@
 
 (add-hook 'eglot-managed-mode-hook #'my/eglot-managed-mode-setup)
 
-(define-key eglot-mode-map (kbd "C-c a") 'eglot-code-actions)
+(with-eval-after-load 'eglot
+    (define-key eglot-mode-map (kbd "C-c a") 'eglot-code-actions))
