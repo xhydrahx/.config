@@ -1,18 +1,9 @@
-(make-directory "~/.emacs.d/autosaves/" t)
-
-(make-directory "~/.emacs.d/backups/" t)
+(setq backup-directory-alist nil)
 
 (setq auto-save-file-name-transforms
-      `((".*" ,(expand-file-name "~/.emacs.d/autosaves/") t)))
+            `((".*" . "~/.emacs.d/autosaves/") t))
 
-(setq backup-directory-alist
-      `(("." . ,(expand-file-name "~/.emacs.d/backups/"))))
-
-(setq backup-by-copying t    ; Don't delink hardlinks
-      delete-old-versions t  ; Clean up the backups
-      version-control t      ; Use version numbers on backups
-      kept-new-versions 5    ; Keep some new versions
-            kept-old-versions 2)   ; And some old ones
+(setq auto-save-default t)
 
 (menu-bar-mode -1)
 
