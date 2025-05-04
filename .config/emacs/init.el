@@ -1,4 +1,7 @@
-(setq make-backup-files nil)
+(setq backup-directory-alist `(("." . "~/.emacs.d/backups")))
+
+(setq auto-save-file-name-transforms
+            `((".*" "~/.emacs.d/autosaves/" t)))
 
 (menu-bar-mode -1)
 
@@ -53,6 +56,18 @@
 
 (add-hook 'eglot-managed-mode-hook #'my/setup-company-for-eglot)
 
-(add-hook 'rust-mode-hook
-          (lambda ()
-            (eglot-ensure)))
+(defun my/rust-setup ()
+  (eglot-ensure))
+
+(add-hook 'rust-mode-hook #'my/rust-setup)
+
+(defun my/eglot-format-buffer-on-save ()
+  (when (eglot-managed-p)
+    (eglot-format-buffer)))
+
+(defun my/eglot-managed-mode-setup ()
+  (add-hook 'before-save-hook #'my/eglot-format-buffer-on-save nil t))
+
+(add-hook 'eglot-managed-mode-hook #'my/eglot-managed-mode-setup)
+
+(define-key eglot-mode-map (kbd "C-c a") 'eglot-code-actions)
