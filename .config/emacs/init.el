@@ -92,3 +92,5 @@
 (global-set-key (kbd "C-c s") #'org-store-link)
 (global-set-key (kbd "C-c a") #'org-agenda)
 (global-set-key (kbd "C-c c") #'org-capture)
+
+(setq org-directory "~/misc/org/")
