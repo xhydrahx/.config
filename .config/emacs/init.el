@@ -82,4 +82,13 @@
 (add-hook 'eglot-managed-mode-hook #'my/eglot-managed-mode-setup)
 
 (with-eval-after-load 'eglot
-    (define-key eglot-mode-map (kbd "C-c a") 'eglot-code-actions))
+    (define-key eglot-mode-map (kbd "C-c l") 'eglot-code-actions))
+
+(custom-set-variables
+ '(package-selected-packages nil))
+(custom-set-faces
+ )
+
+(global-set-key (kbd "C-c s") #'org-store-link)
+(global-set-key (kbd "C-c a") #'org-agenda)
+(global-set-key (kbd "C-c c") #'org-capture)
