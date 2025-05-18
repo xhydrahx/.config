@@ -1,9 +1,10 @@
 # Zenfull setup
 **Configured:**
 * Sh/Bash
-* Emacs
-* Dwm
+* Neovim
+* Tmux
+* Bspwm
 * Stterm
 * Dmenu
 
-This setup mainly uses the gruvbox colorscheme
+This setup mainly uses the zenbones colorscheme
