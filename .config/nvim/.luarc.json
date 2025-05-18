@@ -1,0 +1,12 @@
+{
+    "diagnostics.disable": [
+        "missing-fields",
+        "redundant-parameter",
+        "inject-field"
+    ],
+    "diagnostics.globals": [
+        "on_attach",
+        "setup",
+        "Snacks"
+    ]
+}

@@ -5,8 +5,13 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Liberation Mono:pixelsize=12:antialias=true:autohint=true";
+
+/* Primary font */
+static char *font = "CommitMono Nerd Font:size=11:antialias=true:autohint=true";
 static int borderpx = 2;
+
+static const int vertpad = 0;  /* Vertical padding */
+static const int horizpad = 0; /* Horizontal padding */
 
 /*
  * What program is execed by st depends of these precedence rules:
@@ -16,7 +21,7 @@ static int borderpx = 2;
  * 4: value of shell in /etc/passwd
  * 5: value of shell in config.h
  */
-static char *shell = "/bin/sh";
+static char *shell = "/usr/bin/fish";
 char *utmp = NULL;
 /* scroll program: to enable use a string like "scroll" */
 char *scroll = NULL;
@@ -95,36 +100,40 @@ unsigned int tabspaces = 8;
 
 /* Terminal colors (16 first used in escape sequence) */
 static const char *colorname[] = {
-	/* 8 normal colors */
-	[0] = "#282828", /* hard contrast: #1d2021 / soft contrast: #32302f */
-	[1] = "#cc241d", /* red     */
-	[2] = "#98971a", /* green   */
-	[3] = "#d79921", /* yellow  */
-	[4] = "#458588", /* blue    */
-	[5] = "#b16286", /* magenta */
-	[6] = "#689d6a", /* cyan    */
-	[7] = "#a89984", /* white   */
+    /* 8 normal colors */
+    [0] = "#1C1917", /* black   */
+    [1] = "#DE6E7C", /* red     */
+    [2] = "#819B69", /* green   */
+    [3] = "#B77E64", /* yellow  */
+    [4] = "#6099C0", /* blue    */
+    [5] = "#B279A7", /* magenta */
+    [6] = "#66A5AD", /* cyan    */
+    [7] = "#B4BDC3", /* white   */
 
-	/* 8 bright colors */
-	[8]  = "#928374", /* black   */
-	[9]  = "#fb4934", /* red     */
-	[10] = "#b8bb26", /* green   */
-	[11] = "#fabd2f", /* yellow  */
-	[12] = "#83a598", /* blue    */
-	[13] = "#d3869b", /* magenta */
-	[14] = "#8ec07c", /* cyan    */
-	[15] = "#ebdbb2", /* white   */
+    /* 8 bright colors */
+    [8]  = "#403833", /* black   */
+    [9]  = "#E8838F", /* red     */
+    [10] = "#8BAE68", /* green   */
+    [11] = "#D68C67", /* yellow  */
+    [12] = "#61ABDA", /* blue    */
+    [13] = "#CF86C1", /* magenta */
+    [14] = "#65B8C1", /* cyan    */
+    [15] = "#888F94", /* white   */
+
+    /* special colors */
+    [256] = "#B4BDC3", /* foreground */
+    [257] = "#1C1917", /* background */
+    [258] = "#C4CACF", /* cursor */
 };
-
 
 /*
  * Default colors (colorname index)
  * foreground, background, cursor, reverse cursor
  */
-unsigned int defaultfg = 15;
-unsigned int defaultbg = 0;
-unsigned int defaultcs = 15;
-static unsigned int defaultrcs = 257;
+unsigned int defaultfg = 256; /* Foreground color */
+unsigned int defaultbg = 257; /* Background color */
+unsigned int defaultcs = 258; /* Cursor color */
+static unsigned int defaultrcs = 257; /* Reverse cursor color */
 
 /*
  * Default shape of cursor
@@ -133,7 +142,7 @@ static unsigned int defaultrcs = 257;
  * 6: Bar ("|")
  * 7: Snowman ("☃")
  */
-static unsigned int cursorshape = 2;
+static unsigned int cursorshape = 6;
 
 /*
  * Default columns and rows numbers
@@ -193,6 +202,8 @@ static Shortcut shortcuts[] = {
 	{ TERMMOD,              XK_Y,           selpaste,       {.i =  0} },
 	{ ShiftMask,            XK_Insert,      selpaste,       {.i =  0} },
 	{ TERMMOD,              XK_Num_Lock,    numlock,        {.i =  0} },
+        { ControlMask,          XK_Up,          kscrollup,      {.i = 1} },
+        { ControlMask,          XK_Down,        kscrolldown,    {.i = 1} },
 };
 
 /*
