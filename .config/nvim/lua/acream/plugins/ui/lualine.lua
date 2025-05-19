@@ -11,19 +11,12 @@ return {
                 section_separators = { left = '', right = '' },
             },
             sections = {
-                lualine_a = {
-                    'mode',
-                },
-                lualine_b = {
-                    'filename',
-                    'diagnostics',
-                },
-                lualine_c = {},
-                lualine_x = {},
+                lualine_a = { "mode" },
+                lualine_b = { "filename" },
+                lualine_c = { "diagnostics" },
+                lualine_x = { "lsp_status" },
                 lualine_y = { "branch" },
-                lualine_z = {
-                    'progress',
-                },
+                lualine_z = { "location" },
             },
             inactive_sections = {
                 lualine_a = {},

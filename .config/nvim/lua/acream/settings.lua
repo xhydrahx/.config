@@ -7,6 +7,8 @@ vim.opt.smartindent = true
 vim.opt.number = true
 vim.opt.relativenumber = true
 
+vim.o.cmdheight = 0
+
 vim.api.nvim_create_autocmd("BufEnter", {
     callback = function()
         if vim.bo.buftype == "" then
