@@ -1,10 +1,10 @@
-# Zenfull setup
+# Carbon Fiber setup
 **Configured:**
-* Sh/Bash
+* Fish
 * Neovim
 * Tmux
-* Bspwm
+* Dwm
 * Stterm
 * Dmenu
 
-This setup mainly uses the zenbones colorscheme
+This setup mainly uses the oxocarbon colorscheme
