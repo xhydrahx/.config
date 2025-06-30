@@ -139,7 +139,7 @@ return {
                 nerd_font_variant = "mono",
             },
             sources = {
-                default = { "lsp", "path", "snippets", "buffer", "lazydev" },
+                default = { "lsp", "path", "snippets", "buffer" },
                 per_filetype = {
                     { markdown = { "snippets", "buffer", "spell" } },
                     { asciidoc = { "snippets", "buffer", "spell" } },
@@ -149,10 +149,6 @@ return {
                 providers = {
                     lsp = {
                         fallbacks = { "buffer" },
-                    },
-                    lazydev = {
-                        name = "LazyDev",
-                        module = "lazydev.integrations.blink",
                     },
                     buffer = {
                         opts = {},

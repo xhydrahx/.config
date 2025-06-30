@@ -9,16 +9,6 @@ vim.opt.relativenumber = true
 
 vim.o.cmdheight = 0
 
-vim.api.nvim_create_autocmd("BufEnter", {
-    callback = function()
-        if vim.bo.buftype == "" then
-            vim.opt.statuscolumn = "%=%{v:relnum > 0 ? v:relnum : v:lnum} "
-        else
-            vim.opt.statuscolumn = ""
-        end
-    end
-})
-
 vim.g.mapleader = " "
 
 vim.keymap.set("n", "<leader>ff", function()
@@ -35,4 +25,8 @@ end)
 
 vim.keymap.set("n", "<leader>e", function()
     Snacks.explorer()
+end)
+
+vim.keymap.set("n", "<leader>t", function()
+    vim.cmd("terminal")
 end)
