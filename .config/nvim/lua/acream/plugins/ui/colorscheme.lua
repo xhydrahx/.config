@@ -1,6 +1,6 @@
 return {
-    "nyoom-engineering/oxocarbon.nvim",
+    "romainl/vim-dichromatic",
     config = function()
-        vim.cmd.colorscheme("oxocarbon")
+        vim.cmd.colorscheme("dichromatic")
     end
 }

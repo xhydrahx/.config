@@ -11,21 +11,8 @@ vim.o.cmdheight = 0
 
 vim.g.mapleader = " "
 
-vim.keymap.set("n", "<leader>ff", function()
-    Snacks.picker.files()
-end)
-
-vim.keymap.set("n", "<leader>fg", function()
-    Snacks.picker.grep()
-end)
-
-vim.keymap.set("n", "<leader>fr", function()
-    Snacks.picker.recent()
-end)
-
-vim.keymap.set("n", "<leader>e", function()
-    Snacks.explorer()
-end)
+vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
+vim.keymap.set("n", "<leader>ff", "<CMD>FzfLua files<CR>", { desc = "File Fuzzy finder" })
 
 vim.keymap.set("n", "<leader>t", function()
     vim.cmd("terminal")
