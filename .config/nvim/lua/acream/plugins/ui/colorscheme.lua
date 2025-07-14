@@ -1,6 +1,6 @@
-return {
-    "romainl/vim-dichromatic",
-    config = function()
-        vim.cmd.colorscheme("dichromatic")
-    end
+return { 
+    "RRethy/base16-nvim",
+    config = function ()
+        vim.cmd.colorscheme("base16-3024")
+    end,
 }
