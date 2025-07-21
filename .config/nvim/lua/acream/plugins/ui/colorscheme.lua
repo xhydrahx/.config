@@ -1,6 +1,9 @@
-return { 
-    "RRethy/base16-nvim",
-    config = function ()
-        vim.cmd.colorscheme("base16-3024")
+return {
+    "zenbones-theme/zenbones.nvim",
+    dependencies = "rktjmp/lush.nvim",
+    lazy = false,
+    priority = 1000,
+    config = function()
+        vim.cmd.colorscheme("zenbones")
     end,
 }
